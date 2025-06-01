@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GAP Tutorials – Educational Consulting</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      max-width: 700px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      background: linear-gradient(to right, #ff6a00, #ee0979);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    p.description {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    .accordion-item {
+      margin-bottom: 20px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .accordion-header {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 15px 20px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .accordion-header:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 0 20px;
+    }
+
+    .accordion-item.active .accordion-content {
+      max-height: 600px;
+      padding-bottom: 15px;
+    }
+
+    .accordion-content p,
+    .accordion-content ul {
+      padding: 15px 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    button {
+      background-color: #ff6a00;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ee0979;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome To GAP Tutorials</h1>
+    <p class="description">
+      Professional guidance for students and professionals. Let's close the gap between you and your goals.
+    </p>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Learn More</div>
+      <div class="accordion-content">
+        <p>
+          GAP Tutorials is your trusted educational consultant. We offer personalized advice on academic planning,
+          career decisions, and how to make the most of your learning journey.
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Our Services</div>
+      <div class="accordion-content">
+        <ul>
+          <li>🎯 Academic & Career Counseling</li>
+          <li>🎓 University Application Support</li>
+          <li>📚 Test Prep Coaching (SAT, IELTS, etc.)</li>
+          <li>📝 Personal Statement Review</li>
+          <li>💡 Skills Training (Coding, Writing, etc.)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">About Us</div>
+      <div class="accordion-content">
+        <p>
+          Founded by experienced educators, GAP Tutorials helps students gain confidence, clarity,
+          and a strong academic direction. Our consultants have helped learners around the world achieve real results.
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Contact Us</div>
+      <div class="accordion-content">
+        <form onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');">
+          <input type="text" placeholder="Your Name" required />
+          <input type="tel" placeholder="Phone Number" required />
+          <input type="email" placeholder="Email Address" required />
+          <textarea rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.accordion-item');
+    items.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+      header.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
